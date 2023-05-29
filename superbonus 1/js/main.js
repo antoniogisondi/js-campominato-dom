@@ -13,7 +13,7 @@ container.appendChild(table)
     return Math.floor(Math.random()*(max - min + 1) + min)
 }
 
- // CREO LA FUNZIONE CHE MI POPOLA L'ARRAY DELLE BOMBE IMPLEMENTANDO LA FUNZIONE CHE MI GENERA NUMERI RANDOM
+ // CREO LA FUNZIONE CHE MI POPOLA L'ARRAY DELLE BOMBE
  function arrayBombPush(array_bomb, max){
     let check = false;
     let random_number;
@@ -28,9 +28,13 @@ container.appendChild(table)
 
 // CREO LA FUNZIONE CHE GENERA LA GRIGLIA NEL CONTENITORE
 function grid(caselle){
+    let message = document.getElementById('score')
     const arrayBomb = []
     table.innerHTML = ''
+    message.innerText = ''
     let cnt = 1;
+    let game_over = false;
+    let score = 0;
     for(let i = 0; i<caselle; i++){
         let row = document.createElement("tr")
         table.appendChild(row)
@@ -43,12 +47,17 @@ function grid(caselle){
             box.appendChild(numberGrid)
             box.classList.add('column')
             box.addEventListener('click', function(){
+              if(game_over === false){
                   if(!arrayBomb.includes(parseInt(this.innerText))){
                       this.classList.toggle("bg-color")
+                      score++
                   }
                   else{
                       this.classList.add("bomb")
-                  }  
+                      game_over = true
+                      document.getElementById('score').innerText = `Hai perso! Il tuo punteggio è di: ${score}`
+                  }
+              }  
             })
             cnt++  
         }
