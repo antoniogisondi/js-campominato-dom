@@ -13,7 +13,7 @@ container.appendChild(table)
     return Math.floor(Math.random()*(max - min + 1) + min)
 }
 
- // CREO LA FUNZIONE CHE MI POPOLA L'ARRAY DELLE BOMBE
+ // CREO LA FUNZIONE CHE MI POPOLA L'ARRAY DELLE BOMBE IMPLEMENTANDO LA FUNZIONE CHE MI GENERA NUMERI RANDOM
  function arrayBombPush(array_bomb, max){
     let check = false;
     let random_number;
