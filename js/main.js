@@ -44,7 +44,7 @@ function grid(caselle){
             box.classList.add('column')
             box.addEventListener('click', function(){
                   if(!arrayBomb.includes(parseInt(this.innerText))){
-                      this.classList.toggle("bg-color")
+                      this.classList.add("bg-color")
                   }
                   else{
                       this.classList.add("bomb")

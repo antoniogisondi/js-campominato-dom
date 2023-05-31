@@ -49,7 +49,7 @@ function grid(caselle){
             box.addEventListener('click', function(){
               if(game_over === false){
                   if(!arrayBomb.includes(parseInt(this.innerText))){
-                      this.classList.toggle("bg-color")
+                      this.classList.add("bg-color")
                       score++
                   }
                   else{
