@@ -28,9 +28,12 @@ container.appendChild(table)
 
 // CREO LA FUNZIONE CHE GENERA LA GRIGLIA NEL CONTENITORE
 function grid(caselle){
+    let message = document.getElementById('score')
     const arrayBomb = []
     table.innerHTML = ''
+    message.innerText = ''
     let cnt = 1;
+    let score = 0;
     for(let i = 0; i<caselle; i++){
         let row = document.createElement("tr")
         table.appendChild(row)
@@ -45,9 +48,11 @@ function grid(caselle){
             box.addEventListener('click', function(){
                   if(!arrayBomb.includes(parseInt(this.innerText))){
                       this.classList.add("bg-color")
+                      score++
                   }
                   else{
                       this.classList.add("bomb")
+                      message.innerText = `Hai perso! Il tuo punteggio è di: ${score}`
                   }  
             })
             cnt++  

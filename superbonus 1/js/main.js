@@ -55,7 +55,7 @@ function grid(caselle){
                   else{
                       this.classList.add("bomb")
                       game_over = true
-                      document.getElementById('score').innerText = `Hai perso! Il tuo punteggio è di: ${score}`
+                      message.innerText = `Hai perso! Il tuo punteggio è di: ${score}`
                   }
               }  
             })
